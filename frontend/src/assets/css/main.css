@@ -209,7 +209,6 @@ iframe {
 
 /*------------------------------------------------------------------
 [ Button sign in with ]*/
-.btn-face,
 .btn-google {
   font-family: Montserrat-SemiBold;
   font-size: 18px;
@@ -239,39 +238,7 @@ iframe {
   z-index: 1;
 }
 
-.btn-google::before,
-.btn-face::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  top: 0;
-  left: 0;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
-  opacity: 0;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.btn-face {
-  color: #fff;
-  background-color: #3b5998;
-}
-
-.btn-face i {
-  font-size: 30px;
-  margin-right: 17px;
-  padding-bottom: 3px;
-}
+.btn-google::before
 
 .btn-google {
   color: #555555;
@@ -284,12 +251,10 @@ iframe {
   padding-bottom: 3px;
 }
 
-.btn-face:hover:before,
 .btn-google:hover:before {
   opacity: 1;
 }
 
-.btn-face:hover,
 .btn-google:hover {
   color: #fff;
 }
@@ -437,6 +402,15 @@ iframe {
   opacity: 1;
 }
 
+.login100-form-btn:disabled {
+  background-color: grey; 
+}
+
+.login100-form-btn:disabled:hover:before {
+  background-color: grey; 
+  opacity: 0;
+}
+
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -520,7 +494,6 @@ iframe {
     padding-right: 15px;
   }
 
-  .btn-face,
   .btn-google {
     width: 100%;
   }
