@@ -15,19 +15,21 @@ exports.register_create = (req, res, next) => {
         }
     	let user = new User(
             {	
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                edad: req.body.edad,
+                name: req.body.name,
+                lastname: req.body.lastname,
                 dni: req.body.dni,
-                correo: req.body.correo,
+                age: req.body.age,
+                email: req.body.email,
+                user: null,
                 password: hash,
-                direccion: null,
-                telefono: null,
-                celular: null,
-                fecha_creacion: date,
-                fecha_actualizacion: date,
+                telephone: null,
+                mobile: null,
                 url_imagen: null,
-                estado: true
+                condition: true,
+                rol_id: null,
+                address_id: null,
+                created_at: date,
+                updated_at: date,
             }
         )
     	User.AddUser(user,function (err) {

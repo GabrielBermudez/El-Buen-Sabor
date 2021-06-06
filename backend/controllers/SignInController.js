@@ -12,27 +12,28 @@ exports.verify_user = (req,res,next) => {
 	const saltRounds = 10;
 	req.session.user = req.session.passport.user
 
-	User.FindUserByEmail(req.session.user.emails[0].value, (err,usuario) =>{
-		if(!usuario){
+	User.FindUserByEmail(req.session.user.emails[0].value, (err,user) =>{
+		if(!user){
 			bcrypt.hash(`${req.session.user.id}-${date.getTime()}`, saltRounds, function(err, hash) {
 				if (err) {
 		            return next(err);
 		        }
 				let user = new User({	
-			            nombre: req.session.user.name.givenName,
-			            apellido: req.session.user.name.familyName,
-			            edad: '',
-			            dni: '',
-			            correo: req.session.user.emails[0].value,
-			            password: hash,
-			            direccion: '',
-			            telefono: '',
-			            celular: '',
-			            fecha_creacion: date,
-			            fecha_actualizacion: date,
-			            url_imagen: req.session.user.photos[0].value,
-			            estado: true
-			        })
+		            name: req.session.user.name.givenName,
+		            lastname: req.session.user.name.familyName,
+		            dni: '',
+		            age: '',
+		            email: req.session.user.emails[0].value,
+		            password: hash,
+		            telephone: '',
+		            mobile: '',
+		            url_image: req.session.user.photos[0].value,
+		            condition: true,
+		            rol_id: '',
+		            address_id: '',
+		            created_at: date,
+		            updated_at: date
+		        })
 
 				User.AddUser(user,function (err) {
 			        if (err) {
@@ -44,7 +45,7 @@ exports.verify_user = (req,res,next) => {
 			    })
 		    })
 		}else{
-			req.session.user = usuario
+			req.session.user = user
 			res.redirect('/login/index')
 		}
 	})

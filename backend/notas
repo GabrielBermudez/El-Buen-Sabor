@@ -70,3 +70,5 @@
 20) npm install --save passport-google-oauth (Google authentication module by Passport.js)
 
 21) npm install --save bcrypt
+
+22) npm install -g @angular/cli is used to create project in Angular with "ng"
