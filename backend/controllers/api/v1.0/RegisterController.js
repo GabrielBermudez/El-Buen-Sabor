@@ -1,10 +1,6 @@
-let User = require('../models/UserModel')
+let User = require('../../../models/UserModel')
 let mongoose = require('mongoose')
 const bcrypt = require('bcrypt');
-
-exports.action_register_create = (req, res, next) => {
-	res.render('register/create')
-}
 
 exports.register_create = (req, res, next) => {
     const saltRounds = 10;
@@ -20,24 +16,31 @@ exports.register_create = (req, res, next) => {
                 dni: req.body.dni,
                 age: req.body.age,
                 email: req.body.email,
-                user: null,
+                user: req.body.user,
                 password: hash,
-                telephone: null,
-                mobile: null,
-                url_imagen: null,
-                condition: true,
-                rol_id: null,
-                address_id: null,
+                telephone: req.body.telephone,
+                mobile: req.body.mobile,
+                url_image: req.body.url_image,
+                condition: req.body.condition,
+                rol_id: req.body.rol_id,
+                address_id: req.body.address_id,
                 created_at: date,
                 updated_at: date,
             }
         )
     	User.AddUser(user,function (err) {
             if (err) {
-                return next(err)
+                res.status(500).send({
+                    status:500,
+                    error:true,
+                    message: "Couldn't Create User"
+                })
             }
-            console.log('User Created successfully')
-            res.redirect('/')
+            res.status(200).send({
+                status:200,
+                error:false,
+                message: "User Created Successfully"
+            })
             
         })
     })

@@ -2,20 +2,24 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 let userSchema = new Schema({
-	nombre: String,
-	apellido: String,
-	edad: Number,
+	name: String,
+	lastname: String,
 	dni: Number,
-	correo: String,
+	age: Number,
+	email: String,
+	user: String,
 	password: String,
-	direccion: String,
-	telefono: String,
-	celular: String,
-	fecha_creacion: Date,
-	fecha_actualizacion: Date,
-	url_imagen: String,
-	estado: Boolean,
-	isAdmin: Boolean,
+	telephone: String,
+	mobile: String,
+	url_image: String,
+	condition: Boolean,
+	rol_id: String,
+	address_id: String,
+	created_at: Date,
+	updated_at: Date,
+
+
+
 })
 
 userSchema.statics.AddUser = function(user, callback){ //Method for add user in schema of database
@@ -34,12 +38,12 @@ userSchema.statics.FindUserByID = function(id,callback){
 	return this.findOne({ _id:id },callback);
 };
 
-userSchema.statics.FindUserByCorreo = function(correo,password,callback){
-	return this.findOne({correo:correo,password:password},callback);
+userSchema.statics.FindUserByEmailAndPassword = function(email,password,callback){
+	return this.findOne({email:email,password:password},callback);
 };
 
-userSchema.statics.FindUserByEmail = function(correo,callback){
-	return this.findOne({correo:correo},callback);
+userSchema.statics.FindUserByEmail = function(email,callback){
+	return this.findOne({email:email},callback);
 };
 
 
