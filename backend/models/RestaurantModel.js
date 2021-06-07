@@ -10,15 +10,15 @@ let RestaurantSchema = new Schema({
 	updated_at: Date
 });
 
-RestaurantSchema.statics.AddRestaurant = function (Restaurant, callback){
+RestaurantSchema.statics.AddRestaurant = function (restaurant, callback){
 	return this.create(restaurant,callback);
 }
 
-RestaurantSchema.statics.FindRestaurantById = function (Restaurant, callback){
+RestaurantSchema.statics.FindRestaurantById = function (id, callback){
 	return this.findOne({_id:id}, callback);
 }
 
-Restaurant.statics.FindAllRestaurants = function (callback){
+RestaurantSchema.statics.FindAllRestaurants = function (callback){
 	return this.find({}, callback);
 }
 
@@ -26,7 +26,7 @@ RestaurantSchema.statics.UpdateRestaurant = function (restaurant, callback) {
 	return restaurant.save();
 }
 
-RestaurantSchema.statics.DeleteRestaurant = function(Restaurant, callback){
+RestaurantSchema.statics.DeleteRestaurant = function(id, callback){
 	return this.deleteOne({_id:id}, callback);
 }
 

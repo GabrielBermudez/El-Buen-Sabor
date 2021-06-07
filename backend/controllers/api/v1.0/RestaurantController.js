@@ -13,12 +13,16 @@ exports.CreateRestaurant = (req,res) =>{
 	});
 	Restaurant.AddRestaurant(restaurant, function(err){
 		if(err){
-			return next(err);
+			return res.status(500).send({
+				status:500,
+				error: true,
+				message: "Couldn't create restaurant"
+			});
 		}else{
-			res.status(200).send({
+			return res.status(200).send({
 				status:200,
 				error: false,
-				message: "restaurant created succesfully"
+				message: "Restaurant created succesfully"
 			});
 
 		}
@@ -26,16 +30,51 @@ exports.CreateRestaurant = (req,res) =>{
 }
 
 exports.RestaurantDetails = (req,res) =>{
-	Restaurant.FindRestaurantById(req.params.id, function(err, restaurant){
+	Restaurant.FindRestaurantById(req.body.id, function(err, restaurant){
+		console.log(restaurant, err);
 		if(err){
-			return next(err);
-		}else{
-			res.render("/algunotrolugar" {restaurant});
+			return res.status(500).send({
+				status:500,
+				error: true,
+				message: "An error has ocurred"
+			});
 		}
+		else{
+			if(!restaurant){
+				return res.status(404).send({
+					status:404,
+					error: true,
+					message: "restaurant not found"
+				});
+
+			}else{
+				return res.status(200).send({
+					status:200,
+					error: false,
+					data: {restaurant}
+				});
+			}
+		}
+
+		
 	})
 
 }
 
 exports.ShowAllRestaurants = (req,res) =>{
-	Restaurant.function() {}
+	Restaurant.FindAllRestaurants(function (err, restaurants_list){
+		if(err){
+			return res.status(500).send({
+				status:500,
+				error: true,
+				message: "No restaurants to show"
+			});
+		}else{
+			return res.status(200).send({
+				status:200,
+				error: false,
+				data: {restaurants_list}
+			});
+		}
+	})
 }

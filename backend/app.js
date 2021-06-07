@@ -21,7 +21,7 @@ var app = express();
 
 //let mongoDB = 'mongodb://localhost/sakura';
 
-let mongoDB = process.env.MONGO_DB || 'mongodb://localhost/sakura'
+let mongoDB = process.env.MONGO_DB || 'mongodb://localhost/el-buen-sabor'
 mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
