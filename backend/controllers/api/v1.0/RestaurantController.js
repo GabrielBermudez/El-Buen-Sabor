@@ -30,12 +30,12 @@ exports.RestaurantDetails = (req,res) =>{
 		if(err){
 			return next(err);
 		}else{
-			res.render("/algunotrolugar" {restaurant});
+			res.render("/algunotrolugar", {restaurant});
 		}
 	})
 
 }
 
 exports.ShowAllRestaurants = (req,res) =>{
-	Restaurant.function() {}
+
 }
