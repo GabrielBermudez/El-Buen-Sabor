@@ -12,8 +12,7 @@ const routes: Routes = [
     //Path para cualquier otra ruta que no sea una  de las creadas
     path: '**',
     redirectTo: 'auth',
-  },
-  {path : 'registro', component: RegistroComponent}
+  }
 ];
 
 @NgModule({
