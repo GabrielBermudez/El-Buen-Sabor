@@ -34,7 +34,7 @@
   <div class="p-t-13 p-b-9">
     <span class="txt1"> Contraseña </span>
 
-    <a href="#" class="txt2 bo1 m-l-5"> ¿Se olvido? </a>
+    <a [routerLink]="['recuperarPassword']" class="txt2 bo1 m-l-5"> ¿Se olvido? </a>
   </div>
   <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
   <div
@@ -64,7 +64,6 @@
 
   <div class="w-full text-center p-t-55">
     <span class="txt2"> ¿No tiene cuenta? </span>
-
-    <a href="#" class="txt2 bo1"> Crear una </a>
+    <a [routerLink]="['registro']" class="txt2 bo1"> Crear una </a>
   </div>
 </form>

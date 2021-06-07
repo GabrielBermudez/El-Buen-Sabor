@@ -1,3 +1,5 @@
+import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 //Modulo de las rutas de Auth
 
 import { NgModule } from '@angular/core';
@@ -12,7 +14,9 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: 'login', component: LoginComponent },
-      { path: '**', redirectTo: 'login' },
+      {path : 'registro', component : RegistroComponent},
+      {path : 'recuperarPassword', component : RecuperarPasswordComponent},
+      { path: '**', redirectTo: 'login' }
     ],
   },
 ];
