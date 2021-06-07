@@ -1,6 +1,7 @@
 let express = require('express')
 let router = express.Router()
 
+/*
 let login_controller = require('../controllers/LoginController')
 let middlewares = require('./middlewares')
 
@@ -15,4 +16,10 @@ router.post('/reset-password', login_controller.reset_password)
 
 router.get('/change-password/id/:id/token/:token', middlewares.isNotLoggedIn, login_controller.action_change_password)
 router.post('/change-password',middlewares.isNotLoggedIn, login_controller.change_password)
+*/
+
+let login_controller = require('../controllers/api/v1.0/LoginController')
+
+router.post('/', login_controller.user_login)
+
 module.exports = router

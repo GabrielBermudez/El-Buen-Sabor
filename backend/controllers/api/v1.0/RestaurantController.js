@@ -31,15 +31,15 @@ exports.CreateRestaurant = (req,res) =>{
 
 exports.RestaurantDetails = (req,res) =>{
 	Restaurant.FindRestaurantById(req.body.id, function(err, restaurant){
-		console.log(restaurant, err);
+
 		if(err){
 			return res.status(500).send({
 				status:500,
 				error: true,
 				message: "An error has ocurred"
 			});
-		}
-		else{
+
+		}else{
 			if(!restaurant){
 				return res.status(404).send({
 					status:404,
@@ -62,6 +62,7 @@ exports.RestaurantDetails = (req,res) =>{
 }
 
 exports.ShowAllRestaurants = (req,res) =>{
+<<<<<<< HEAD
 	Restaurant.FindAllRestaurants(function (err, restaurants_list){
 		if(err){
 			return res.status(500).send({
@@ -77,4 +78,7 @@ exports.ShowAllRestaurants = (req,res) =>{
 			});
 		}
 	})
+=======
+
+>>>>>>> EBS-16-crud-usuario
 }
