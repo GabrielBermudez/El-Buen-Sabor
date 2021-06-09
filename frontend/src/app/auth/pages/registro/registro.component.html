@@ -1,3 +1,12 @@
+<form
+  class="login100-form"
+  autocomplete="off"
+  [formGroup]="formulario"
+  (ngSubmit)="register()"
+>
+  <span class="login100-form-title p-b-10"> Registración </span>
+
+
 <!-- Campo nombre -->
 <div class="p-t-31 p-b-9">
   <span class="txt1"> Nombre </span>
@@ -34,21 +43,21 @@
   />
   <span class="focus-input100"></span>
 </div>
-<!-- Campo mail -->
+<!-- Campo email -->
 <div class="p-t-31 p-b-9">
-  <span class="txt1"> Mail </span>
+  <span class="txt1"> Email </span>
 </div>
 <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
 <div
   class="wrap-input100 validate-input"
-  data-validate="El mail es requerido"
-  [ngClass]="{ 'alert-validate': campoEsValido('mail') }"
+  data-validate='No es un email valido'
+  [ngClass]="{ 'alert-validate': campoEsValido('email') }"
 >
   <input
     class="input100"
     type="text"
-    formControlName="mail"
-    placeholder="Ingrese su mail"
+    formControlName="email"
+    placeholder="Ingrese su email"
   />
   <span class="focus-input100"></span>
 </div>
@@ -65,7 +74,7 @@
 >
   <input
     class="input100"
-    type="text"
+    type="number"
     formControlName="telefono"
     placeholder="Ingrese su telefono"
   />
@@ -79,7 +88,7 @@
 <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
 <div
   class="wrap-input100 validate-input"
-  data-validate="El direccion es requerido"
+  data-validate="La direccion es requerida"
   [ngClass]="{ 'alert-validate': campoEsValido('direccion') }"
 >
   <input
@@ -98,7 +107,7 @@
 <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
 <div
   class="wrap-input100 validate-input"
-  data-validate="El password es requerido"
+  data-validate="El password tiene que ser de 6 o  más  caracteres"
   [ngClass]="{ 'alert-validate': campoEsValido('password') }"
 >
   <input
@@ -110,13 +119,34 @@
   <span class="focus-input100"></span>
 </div>
 
-<!-- Boton  de login -->
+<!-- Campo contraseña2 -->
+<div class="p-t-13 p-b-9">
+  <span class="txt1"> Confirmar contraseña </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div
+  class="wrap-input100 validate-input"
+  data-validate="Las  contraseñas deben ser iguales"
+  [ngClass]="{ 'alert-validate': campoEsValido('password2') }"
+>
+  <input
+    class="input100"
+    type="password"
+    formControlName="password2"
+    placeholder="Ingrese la contraseña nuevamente"
+  />
+  <span class="focus-input100"></span>
+</div>
+
+<!-- Boton  de registro -->
 <div class="container-login100-form-btn m-t-17">
   <button
     class="login100-form-btn"
     type="submit"
     [disabled]="formulario.invalid"
   >
-    Login
+    Registrar
   </button>
 </div>
+</form>
+

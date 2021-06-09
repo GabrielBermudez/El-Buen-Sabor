@@ -14,9 +14,9 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: 'login', component: LoginComponent },
-      {path : 'registro', component : RegistroComponent},
-      {path : 'recuperarPassword', component : RecuperarPasswordComponent},
-      { path: '**', redirectTo: 'login' }
+      { path: 'registro', component: RegistroComponent },
+      { path: 'recuperarPassword', component: RecuperarPasswordComponent },
+      { path: '**', redirectTo: 'login' },
     ],
   },
 ];
