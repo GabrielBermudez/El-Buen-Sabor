@@ -1,3 +1,5 @@
+import { EditarCuentaUsuarioComponent } from './pages/editar-cuenta-usuario/editar-cuenta-usuario.component';
+import { PanelUsuarioComponent } from './pages/panel-usuario/panel-usuario.component';
 import { RecuperarPasswordComponent } from './pages/recuperar-password/recuperar-password.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 //Modulo de las rutas de Auth
@@ -16,6 +18,8 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       {path : 'registro', component : RegistroComponent},
       {path : 'recuperarPassword', component : RecuperarPasswordComponent},
+      {path : 'panel-usuario/:id?', component : PanelUsuarioComponent},
+      {path : 'editar-datos-usuario/:id?', component : EditarCuentaUsuarioComponent},
       { path: '**', redirectTo: 'login' }
     ],
   },
