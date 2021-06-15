@@ -1,32 +1,36 @@
-const User = require('../models/UserModel')
+const User = require('../../../models/UserModel')
 const mongoose = require('mongoose')
 const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-exports.action_login_index = (req, res, next ) => {
-	res.render('login/index')
-}
 
-exports.action_login_reset_password = (req,res) => {
-    res.render('login/reset-password')
-}
-
-exports.user_login = function (req, res,next) {
+exports.user_login = function (req, res) {
 
     User.FindUserByEmail(req.body.email,function(err,user) {
-        if (err) {
-            return next(err);
-        }
         if(user){
             bcrypt.compare(`${req.body.password}-${user.created_at.getTime()}`, user.password, function(err, result) {
                 if(result){
-                    req.session.user = user 
-                    res.redirect('/')
+                    return res.status(200).send({
+                        status:200,
+                        error:false,
+                        data: {user}
+                    })
+
                 }else{
-                    res.render('login/index',{ error: 'email y/o contraseña invalida' });
+                    return res.status(404).send({
+                        status:404,
+                        error:false,
+                        message: "Incorrect password"
+                    })
                 }
             }) 
+        }else{
+            return res.status(404).send({
+                status:404,
+                error:false,
+                message: "User not found"
+            })
         }
     })
 }
