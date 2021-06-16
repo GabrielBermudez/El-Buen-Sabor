@@ -25,10 +25,7 @@ BODY: {
 	"mobile": 2618532943,
 	"url_image": "url_imagen",
 	"condition": "true",
-	"rol_id": 1,
-	"address_id": 2,
-	"created_at": "2021-06-06",
-	"updated_at": "2021-06-06"
+	"address_id": 2
 }
 
 Response: {
@@ -99,8 +96,6 @@ Body: {
     "phone": 2613483423,
     "email": "elbuensabor@gmail.com",
     "address_id": 24,
-    "created_at": "date",
-    "updated_at": "date"
 }
 
 Response:{

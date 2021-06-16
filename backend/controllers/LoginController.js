@@ -13,14 +13,16 @@ exports.action_login_reset_password = (req,res) => {
 }
 
 exports.user_login = function (req, res,next) {
-
+    console.log(req.body);
     User.FindUserByEmail(req.body.email,function(err,user) {
+        console.log(user);
         if (err) {
             return next(err);
         }
         if(user){
             bcrypt.compare(`${req.body.password}-${user.created_at.getTime()}`, user.password, function(err, result) {
                 if(result){
+                    console.log(user);
                     req.session.user = user 
                     res.redirect('/')
                 }else{
