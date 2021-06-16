@@ -6,8 +6,12 @@ let middlewares = require('./middlewares');
 
 router.post('/create', restaurantController.CreateRestaurant);
 
-router.post('/detail', restaurantController.RestaurantDetails);
+router.post('/detail/:id', restaurantController.RestaurantDetails);
 
 router.post('/show', restaurantController.ShowAllRestaurants);
+
+router.post('/update/:id', restaurantController.RestaurantUpdate);
+
+router.post('/delete/:id', restaurantController.RestaurantDelete);
 
 module.exports = router;

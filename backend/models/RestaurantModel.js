@@ -22,11 +22,11 @@ RestaurantSchema.statics.FindAllRestaurants = function (callback){
 	return this.find({}, callback);
 }
 
-RestaurantSchema.statics.UpdateRestaurant = function (restaurant, callback) {
-	return restaurant.save();
+RestaurantSchema.statics.UpdateRestaurant = function (id,restaurant,callback) {
+	return this.updateOne({_id:id}, restaurant, callback);
 }
 
-RestaurantSchema.statics.DeleteRestaurant = function(id, callback){
+RestaurantSchema.statics.DeleteRestaurant = function (id, callback){
 	return this.deleteOne({_id:id}, callback);
 }
 
