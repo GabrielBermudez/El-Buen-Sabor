@@ -22,7 +22,7 @@ exports.register_create = (req, res, next) => {
                 mobile: req.body.mobile,
                 url_image: req.body.url_image,
                 condition: req.body.condition,
-                rol_id: req.body.rol_id,
+                rol_id: 0, //MODIFICAR AL ID CORRESPONDIENTE DEL ROL "USUARIO COMUN"
                 address_id: req.body.address_id,
                 created_at: date,
                 updated_at: date,

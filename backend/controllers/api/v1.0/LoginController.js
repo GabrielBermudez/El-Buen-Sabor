@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt');
 
 
 exports.user_login = function (req, res) {
-
     User.FindUserByEmail(req.body.email,function(err,user) {
         if(user){
             bcrypt.compare(`${req.body.password}-${user.created_at.getTime()}`, user.password, function(err, result) {
@@ -34,12 +33,6 @@ exports.user_login = function (req, res) {
         }
     })
 }
-
-exports.user_logout = (req,res,next) => {
-    req.session.user = null;
-    res.redirect('/');
-}
-
 
 exports.reset_password = (req,res,next) =>{
 
@@ -70,12 +63,20 @@ exports.reset_password = (req,res,next) =>{
         transporter.sendMail(mailOptions, function(error, info){
             if (error){
                 console.log(error);
+                return res.status(500).send({
+                    status:500,
+                    error:true,
+                    message: {error}
+                })
                 
             } else {
                 console.log("Email sent" + info.response);
-                
+                return res.status(200).send({
+                    status:200,
+                    error:false,
+                    data: info.response
+                })
             }
-            res.redirect('/')
         });
     })
 }
@@ -91,10 +92,22 @@ exports.action_change_password = (req, res, next) => {
 
         jwt.verify(token, secret, (err, payload) => {
             if (err) {
-                console.log('This token is not available')
-                res.redirect('/')
+                return res.status(500).send({
+                    status:500,
+                    error:true,
+                    message:{err}
+                })
             } else {
                 res.render('login/change-password', {id:payload.user._id, token})
+                return res.status(200).send({
+                    status:200,
+                    error:false,
+                    data: {
+                        "id":payload.user._id,
+                        "token":token
+                    }
+                })
+
             }
         });
 
@@ -113,8 +126,11 @@ exports.change_password = (req, res, next) => {
 
         jwt.verify(token, secret, (err, payload) => {
             if (err) {
-                console.log('This token is not available')
-                res.redirect('/')
+                return res.status(500).send({
+                    status:500,
+                    error:true,
+                    message: {err}
+                })
             } else {
                 bcrypt.hash(`${password}-${user.created_at.getTime()}`, saltRounds, function(err, hash) {
                     if (err) {
@@ -122,8 +138,11 @@ exports.change_password = (req, res, next) => {
                     }
                     user.password = hash
                     User.UpdateUser(user)
-                    console.log('The password has changed sucessfully')
-                    res.redirect('/')
+                    return res.status(200).send({
+                        status:200,
+                        error:false,
+                        message: "The user was updated successfully"
+                    })
                 })
             }  
         })  
