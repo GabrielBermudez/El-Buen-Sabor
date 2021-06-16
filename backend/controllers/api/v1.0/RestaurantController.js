@@ -7,7 +7,7 @@ exports.CreateRestaurant = (req,res) =>{
 		name: req.body.name,
 		phone: req.body.phone,
 		email: req.body.email,
-		address_id: req.body.address,
+		address_id: 0,
 		created_at: date,
 		updated_at: date
 	});
@@ -22,7 +22,7 @@ exports.CreateRestaurant = (req,res) =>{
 			return res.status(200).send({
 				status:200,
 				error: false,
-				message: "Restaurant created succesfully"
+				message: "Restaurant created successfully"
 			});
 
 		}
@@ -30,8 +30,8 @@ exports.CreateRestaurant = (req,res) =>{
 }
 
 exports.RestaurantDetails = (req,res) =>{
-	Restaurant.FindRestaurantById(req.body.id, function(err, restaurant){
-
+	Restaurant.FindRestaurantById(req.params.id, function(err, restaurant){
+		console.log(restaurant, err);
 		if(err){
 			return res.status(500).send({
 				status:500,
@@ -81,4 +81,49 @@ exports.ShowAllRestaurants = (req,res) =>{
 =======
 
 >>>>>>> EBS-16-crud-usuario
+}
+
+exports.RestaurantUpdate = (req,res) =>{
+	let date = new Date();
+	Restaurant.UpdateRestaurant({_id: req.params.id}, {
+		$set:{
+			name: req.body.name,
+			phone: req.body.phone,
+			email: req.body.email,
+			address_id: 0,
+			updated_at: date,
+		}
+	}, function(error, info){
+		if(error){
+			return res.status(500).send({
+				status:500,
+				error: true,
+				message: "Update cannot be done"
+			});
+		}else{
+			return res.status(200).send({
+				status:200,
+				error: false,
+				message: "Successful update"
+			});
+		}
+	})
+}
+
+exports.RestaurantDelete = (req,res) =>{
+	Restaurant.DeleteRestaurant({_id: req.params.id}, function(err){
+		if(err){
+			return res.status(500).send({
+				status:500,
+				error: true,
+				message: "Cannot delete the register"
+			});
+		}else{
+			return res.status(200).send({
+				status:200,
+				error: false,
+				message: "Register deleted successfully"
+			});
+		}
+	})
 }
