@@ -30,13 +30,13 @@ exports.register_create = (req, res, next) => {
         )
     	User.AddUser(user,function (err) {
             if (err) {
-                res.status(500).send({
+                return res.status(500).send({
                     status:500,
                     error:true,
                     message: "Couldn't Create User"
                 })
             }
-            res.status(200).send({
+            return res.status(200).send({
                 status:200,
                 error:false,
                 message: "User Created Successfully"

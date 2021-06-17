@@ -6,147 +6,145 @@
 >
   <span class="login100-form-title p-b-10"> Registración </span>
 
-
-<!-- Campo nombre -->
-<div class="p-t-31 p-b-9">
-  <span class="txt1"> Nombre </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="El nombre es requerido"
-  [ngClass]="{ 'alert-validate': campoEsValido('nombre') }"
->
-  <input
-    class="input100"
-    type="text"
-    formControlName="nombre"
-    placeholder="Ingrese su nombre"
-  />
-  <span class="focus-input100"></span>
-</div>
-<!-- Campo apellido -->
-<div class="p-t-31 p-b-9">
-  <span class="txt1"> Apellido </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="El apellido es requerido"
-  [ngClass]="{ 'alert-validate': campoEsValido('apellido') }"
->
-  <input
-    class="input100"
-    type="text"
-    formControlName="apellido"
-    placeholder="Ingrese su apellido"
-  />
-  <span class="focus-input100"></span>
-</div>
-<!-- Campo email -->
-<div class="p-t-31 p-b-9">
-  <span class="txt1"> Email </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate='No es un email valido'
-  [ngClass]="{ 'alert-validate': campoEsValido('email') }"
->
-  <input
-    class="input100"
-    type="text"
-    formControlName="email"
-    placeholder="Ingrese su email"
-  />
-  <span class="focus-input100"></span>
-</div>
-
-<!-- Campo telefono -->
-<div class="p-t-31 p-b-9">
-  <span class="txt1"> Telefono </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="El telefono es requerido"
-  [ngClass]="{ 'alert-validate': campoEsValido('telefono') }"
->
-  <input
-    class="input100"
-    type="number"
-    formControlName="telefono"
-    placeholder="Ingrese su telefono"
-  />
-  <span class="focus-input100"></span>
-</div>
-
-<!-- Campo direccion -->
-<div class="p-t-31 p-b-9">
-  <span class="txt1"> Dirección </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="La direccion es requerida"
-  [ngClass]="{ 'alert-validate': campoEsValido('direccion') }"
->
-  <input
-    class="input100"
-    type="text"
-    formControlName="direccion"
-    placeholder="Ingrese su direccion"
-  />
-  <span class="focus-input100"></span>
-</div>
-
-<!-- Campo contraseña -->
-<div class="p-t-13 p-b-9">
-  <span class="txt1"> Contraseña </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="El password tiene que ser de 6 o  más  caracteres"
-  [ngClass]="{ 'alert-validate': campoEsValido('password') }"
->
-  <input
-    class="input100"
-    type="password"
-    formControlName="password"
-    placeholder="Ingrese la contraseña"
-  />
-  <span class="focus-input100"></span>
-</div>
-
-<!-- Campo contraseña2 -->
-<div class="p-t-13 p-b-9">
-  <span class="txt1"> Confirmar contraseña </span>
-</div>
-<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
-<div
-  class="wrap-input100 validate-input"
-  data-validate="Las  contraseñas deben ser iguales"
-  [ngClass]="{ 'alert-validate': campoEsValido('password2') }"
->
-  <input
-    class="input100"
-    type="password"
-    formControlName="password2"
-    placeholder="Ingrese la contraseña nuevamente"
-  />
-  <span class="focus-input100"></span>
-</div>
-
-<!-- Boton  de registro -->
-<div class="container-login100-form-btn m-t-17">
-  <button
-    class="login100-form-btn"
-    type="submit"
-    [disabled]="formulario.invalid"
+  <!-- Campo nombre -->
+  <div class="p-t-31 p-b-9">
+    <span class="txt1"> Nombre </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="El nombre es requerido"
+    [ngClass]="{ 'alert-validate': campoEsValido('nombre') }"
   >
-    Registrar
-  </button>
-</div>
-</form>
+    <input
+      class="input100"
+      type="text"
+      formControlName="nombre"
+      placeholder="Ingrese su nombre"
+    />
+    <span class="focus-input100"></span>
+  </div>
+  <!-- Campo apellido -->
+  <div class="p-t-31 p-b-9">
+    <span class="txt1"> Apellido </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="El apellido es requerido"
+    [ngClass]="{ 'alert-validate': campoEsValido('apellido') }"
+  >
+    <input
+      class="input100"
+      type="text"
+      formControlName="apellido"
+      placeholder="Ingrese su apellido"
+    />
+    <span class="focus-input100"></span>
+  </div>
+  <!-- Campo email -->
+  <div class="p-t-31 p-b-9">
+    <span class="txt1"> Email </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="No es un email valido"
+    [ngClass]="{ 'alert-validate': campoEsValido('email') }"
+  >
+    <input
+      class="input100"
+      type="text"
+      formControlName="email"
+      placeholder="Ingrese su email"
+    />
+    <span class="focus-input100"></span>
+  </div>
 
+  <!-- Campo telefono -->
+  <div class="p-t-31 p-b-9">
+    <span class="txt1"> Telefono </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="El telefono es requerido"
+    [ngClass]="{ 'alert-validate': campoEsValido('telefono') }"
+  >
+    <input
+      class="input100"
+      type="number"
+      formControlName="telefono"
+      placeholder="Ingrese su telefono"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <!-- Campo direccion -->
+  <div class="p-t-31 p-b-9">
+    <span class="txt1"> Dirección </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="La direccion es requerida"
+    [ngClass]="{ 'alert-validate': campoEsValido('direccion') }"
+  >
+    <input
+      class="input100"
+      type="text"
+      formControlName="direccion"
+      placeholder="Ingrese su direccion"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <!-- Campo contraseña -->
+  <div class="p-t-13 p-b-9">
+    <span class="txt1"> Contraseña </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="El password tiene que ser de 6 o  más  caracteres"
+    [ngClass]="{ 'alert-validate': campoEsValido('password') }"
+  >
+    <input
+      class="input100"
+      type="password"
+      formControlName="password"
+      placeholder="Ingrese la contraseña"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <!-- Campo contraseña2 -->
+  <div class="p-t-13 p-b-9">
+    <span class="txt1"> Confirmar contraseña </span>
+  </div>
+  <!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+  <div
+    class="wrap-input100 validate-input"
+    data-validate="Las  contraseñas deben ser iguales"
+    [ngClass]="{ 'alert-validate': campoEsValido('password2') }"
+  >
+    <input
+      class="input100"
+      type="password"
+      formControlName="password2"
+      placeholder="Ingrese la contraseña nuevamente"
+    />
+    <span class="focus-input100"></span>
+  </div>
+
+  <!-- Boton  de registro -->
+  <div class="container-login100-form-btn m-t-17">
+    <button
+      class="login100-form-btn"
+      type="submit"
+      [disabled]="formulario.invalid"
+    >
+      Registrarse
+    </button>
+  </div>
+</form>
