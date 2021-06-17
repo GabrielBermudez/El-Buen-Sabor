@@ -1,0 +1,73 @@
+<div class="p-t-55 p-b-9">
+    <h1>Editar datos</h1>
+</div>
+<!-- Campo nombre -->
+<div class="p-t-31 p-b-9">
+    <span class="txt1"> Nombre </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El nombre es requerido" [ngClass]="{ 'alert-validate': campoEsValido('nombre') }">
+    <input class="input100" type="text" formControlName="nombre" placeholder="Ingrese su nombre" />
+    <span class="focus-input100"></span>
+</div>
+<!-- Campo apellido -->
+<div class="p-t-31 p-b-9">
+    <span class="txt1"> Apellido </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El apellido es requerido" [ngClass]="{ 'alert-validate': campoEsValido('apellido') }">
+    <input class="input100" type="text" formControlName="apellido" placeholder="Ingrese su apellido" />
+    <span class="focus-input100"></span>
+</div>
+<!-- Campo mail -->
+<div class="p-t-31 p-b-9">
+    <span class="txt1"> Email </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El email es requerido" [ngClass]="{ 'alert-validate': campoEsValido('email') }">
+    <input class="input100" type="text" formControlName="email" placeholder="Ingrese su email" />
+    <span class="focus-input100"></span>
+</div>
+
+<!-- Campo telefono -->
+<div class="p-t-31 p-b-9">
+    <span class="txt1"> Telefono </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El telefono es requerido" [ngClass]="{ 'alert-validate': campoEsValido('telefono') }">
+    <input class="input100" type="text" formControlName="telefono" placeholder="Ingrese su telefono" />
+    <span class="focus-input100"></span>
+</div>
+
+<!-- Campo direccion -->
+<div class="p-t-31 p-b-9">
+    <span class="txt1"> Dirección </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El direccion es requerido" [ngClass]="{ 'alert-validate': campoEsValido('direccion') }">
+    <input class="input100" type="text" formControlName="direccion" placeholder="Ingrese su direccion" />
+    <span class="focus-input100"></span>
+</div>
+
+<!-- Campo contraseña -->
+<div class="p-t-13 p-b-9">
+    <span class="txt1"> Contraseña </span>
+</div>
+<!-- Se agrega  la clase alert-validate para mostrar el error especificado  en data-validate -->
+<div class="wrap-input100 validate-input" data-validate="El password es requerido" [ngClass]="{ 'alert-validate': campoEsValido('password') }">
+    <input class="input100" type="password" formControlName="password" placeholder="Ingrese la contraseña" />
+    <span class="focus-input100"></span>
+</div>
+
+<!-- Boton  de login -->
+<div class="container-login100-form-btn m-t-17">
+    <button class="login100-form-btn" type="submit" [disabled]="formulario.invalid">
+  Actualizar perfil
+</button>
+</div>
+
+<!--Campo para ver historial de compras-->
+<div class="w-full p-t-55">
+    <span class="txt1"> ¿Dar de baja tu cuenta? </span>
+    <a href="#" class="txt1 bo1">Si, quiero eliminar mi cuenta.</a>
+</div>

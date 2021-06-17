@@ -1,6 +1,6 @@
+import { RegistroComponent } from './auth/pages/registro/registro.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 //Implementación de LazyLoading
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     //Path para cualquier otra ruta que no sea una  de las creadas
     path: '**',
     redirectTo: 'auth',
-  },
+  }
 ];
 
 @NgModule({
