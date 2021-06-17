@@ -18,6 +18,8 @@ let userRouter = require('./routes/client/user')
 let restaurantRouter = require('./routes/Restaurant');
 let rolesRouter = require('./routes/Roles');
 
+let productRouter = require('./routes/Product');
+
 var app = express();
 
 //let mongoDB = 'mongodb://localhost/el-buen-sabor';
@@ -100,6 +102,8 @@ app.use('/sign-in', signInRouter)
 app.use('/client/user',userRouter)
 app.use('/restaurant', restaurantRouter)
 app.use('/roles', rolesRouter)
+
+app.use('/product', productRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
