@@ -79,23 +79,14 @@ exports.ArticleUpdate = (req,res) =>{
 	let date = new Date();
 	Article.UpdateArticle({_id:req.params.id},{
 		$set:{
-			/*denomination: req.body.denomination,
+			denomination: req.body.denomination,
 			cost: req.body.cost,
 			current_stock: req.body.current_stock,
 			minimun_sotck: req.body.minimun_sotck,
 			unit: req.body.unit,
 			ingredient: req.body.ingredient,
 			product_id: 0,
-			updated_at: date*/
-			denomination: "coca-cola",
-			cost: 150,
-			current_stock: 25,
-			minimun_sotck: 10,
-			unit: "unidad",
-			ingredient: false,
-			product_id: 0,
 			updated_at: date
-
 		}
 	}, function(err, info){
 		if(err){
