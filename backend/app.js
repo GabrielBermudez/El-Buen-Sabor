@@ -19,7 +19,7 @@ let restaurantRouter = require('./routes/Restaurant');
 let rolesRouter = require('./routes/Roles');
 let addressRouter = require('./routes/Address');
 let articleRouter = require('./routes/article');
-
+let categoryRouter = require('./routes/Category');
 let productRouter = require('./routes/Product');
 let priceRouter = require('./routes/Price');
 
@@ -107,7 +107,7 @@ app.use('/restaurant', restaurantRouter)
 app.use('/roles', rolesRouter)
 app.use('/address', addressRouter)
 app.use('/article', articleRouter)
-
+app.use('/category', categoryRouter)
 app.use('/product', productRouter)
 app.use('/price', priceRouter)
 
