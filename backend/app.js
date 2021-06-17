@@ -18,6 +18,7 @@ let userRouter = require('./routes/client/user')
 let restaurantRouter = require('./routes/Restaurant');
 let rolesRouter = require('./routes/Roles');
 let addressRouter = require('./routes/Address');
+let articleRouter = require('./routes/article');
 
 let productRouter = require('./routes/Product');
 
@@ -104,6 +105,7 @@ app.use('/client/user',userRouter)
 app.use('/restaurant', restaurantRouter)
 app.use('/roles', rolesRouter)
 app.use('/address', addressRouter)
+app.use('/article', articleRouter)
 
 app.use('/product', productRouter)
 
