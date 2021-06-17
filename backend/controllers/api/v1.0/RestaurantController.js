@@ -62,7 +62,6 @@ exports.RestaurantDetails = (req,res) =>{
 }
 
 exports.ShowAllRestaurants = (req,res) =>{
-<<<<<<< HEAD
 	Restaurant.FindAllRestaurants(function (err, restaurants_list){
 		if(err){
 			return res.status(500).send({
@@ -78,9 +77,6 @@ exports.ShowAllRestaurants = (req,res) =>{
 			});
 		}
 	})
-=======
-
->>>>>>> EBS-16-crud-usuario
 }
 
 exports.RestaurantUpdate = (req,res) =>{
