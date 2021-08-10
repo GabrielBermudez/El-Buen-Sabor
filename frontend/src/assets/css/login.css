@@ -1,0 +1,17 @@
+#login-index-form{
+	border: 1px solid black; 
+	border-radius: 1px; 
+	background-color: white;
+	width: 600px;
+	margin: 0 auto;
+}
+
+#login-body-form{
+	background-color: #edf0f5;
+}
+
+#titulo-login{
+	border-bottom: 1px solid black;
+	width: 200px;
+	margin: 0 auto;
+}
